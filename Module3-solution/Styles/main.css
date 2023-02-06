@@ -1,0 +1,35 @@
+body {
+    font-family:"Comic Sans MS", sans-serif;
+}
+/** navbar**/
+#navbar{
+    background-color: #989898;
+    border-bottom: 1px solid black;
+}
+.nav-item{
+    text-align: center;
+}
+#navbarSupportedContent{
+    background-color: #fdfdfe;
+}
+.dropdown-divider {
+    border-bottom: 1px solid black;
+}
+
+/** end navbar**/
+/** body **/
+h2{
+    text-align: center;
+}
+
+.menu-item{
+    font-size: 1.4em;
+}
+.menu-type{
+    background-color:#979797 ;
+}
+@media (min-width: 576px) {
+    .navbar-toggler {
+        display: none;
+    }
+}

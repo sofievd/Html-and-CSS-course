@@ -42,7 +42,7 @@ h1 {
 }
 
 .card {
-    border: 2px solid black;
+    border: 1px solid black;
     position: relative;
     background-color: #d5d4d4;
 }
