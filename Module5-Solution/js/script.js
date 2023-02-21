@@ -83,9 +83,7 @@ $(function () { // Same as document.addEventListener("DOMContentLoaded"...
         showLoading("#main-content");
         $ajaxUtils.sendGetRequest(
             allCategoriesUrl,
-            [function (responseText) {
-                document.querySelector("#main-content").innerHTML = responseText
-            }], // ***** <---- TODO: STEP 1: Substitute [...] ******
+            buildAndShowHomeHTML, // ***** <---- TODO: STEP 1: Substitute [...] ******
             true); // Explicitly setting the flag to get JSON from server processed into an object literal
     });
 // *** finish **
@@ -99,6 +97,7 @@ $(function () { // Same as document.addEventListener("DOMContentLoaded"...
         $ajaxUtils.sendGetRequest(
             homeHtmlUrl,
             function (homeHtmlUrl) {
+
 
                 var chosenCategoryShortName = chooseRandomCategory(categories);
                 chosenCategoryShortName += chosenCategoryShortName.short_name;
@@ -127,6 +126,7 @@ $(function () { // Same as document.addEventListener("DOMContentLoaded"...
                 // var homeHtmlToInsertIntoMainPage = ....
 
                 return  homeHtmlToInsertIntoMainPage
+
 
                 // TODO: STEP 4: Insert the produced HTML in STEP 3 into the main page
                 // Use the existing insertHtml function for that purpose. Look through this code for an example
