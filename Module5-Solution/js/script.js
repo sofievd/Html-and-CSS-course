@@ -97,11 +97,9 @@ $(function () { // Same as document.addEventListener("DOMContentLoaded"...
         $ajaxUtils.sendGetRequest(
             homeHtmlUrl,
             function (homeHtmlUrl) {
-
-
                 var chosenCategoryShortName = chooseRandomCategory(categories);
-                chosenCategoryShortName += chosenCategoryShortName.short_name;
-
+                chosenCategoryShortName = chosenCategoryShortName.short_name;
+                console.log(chosenCategoryShortName);
 
                 // TODO: STEP 2: Here, call chooseRandomCategory, passing it retrieved 'categories'
                 // Pay attention to what type of data that function returns vs what the chosenCategoryShortName
@@ -125,7 +123,7 @@ $(function () { // Same as document.addEventListener("DOMContentLoaded"...
                 //
                 // var homeHtmlToInsertIntoMainPage = ....
 
-                return  homeHtmlToInsertIntoMainPage
+                insertHtml("#main-content", homeHtmlToInsertIntoMainPage);
 
 
                 // TODO: STEP 4: Insert the produced HTML in STEP 3 into the main page
