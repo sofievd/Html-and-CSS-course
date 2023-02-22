@@ -91,22 +91,21 @@ $(function () { // Same as document.addEventListener("DOMContentLoaded"...
 
 // Builds HTML for the home page based on categories array
 // returned from the server.
-    function buildAndShowHomeHTML (categories) {
+    function buildAndShowHomeHTML(categories) {
 
         // Load home snippet page
         $ajaxUtils.sendGetRequest(
             homeHtmlUrl,
             function (homeHtmlUrl) {
                 var chosenCategoryShortName = chooseRandomCategory(categories);
-                chosenCategoryShortName = chosenCategoryShortName.short_name;
-                console.log(chosenCategoryShortName);
+                chosenCategoryShortName = "'" + chosenCategoryShortName.short_name + "'";
 
                 // TODO: STEP 2: Here, call chooseRandomCategory, passing it retrieved 'categories'
                 // Pay attention to what type of data that function returns vs what the chosenCategoryShortName
                 // variable's name implies it expects.
                 // var chosenCategoryShortName = ....
 
-                 var  homeHtmlToInsertIntoMainPage = homeHtmlUrl;
+                var homeHtmlToInsertIntoMainPage = homeHtmlUrl;
                 homeHtmlToInsertIntoMainPage = insertProperty(homeHtmlToInsertIntoMainPage, "randomCategoryShortName", chosenCategoryShortName);
 
 
@@ -137,7 +136,7 @@ $(function () { // Same as document.addEventListener("DOMContentLoaded"...
 
 
 // Given array of category objects, returns a random category object.
-    function chooseRandomCategory (categories) {
+    function chooseRandomCategory(categories) {
         // Choose a random index into the array (from 0 inclusively until array length (exclusively))
         var randomArrayIndex = Math.floor(Math.random() * categories.length);
 
@@ -167,7 +166,7 @@ $(function () { // Same as document.addEventListener("DOMContentLoaded"...
 
 // Builds HTML for the categories page based on the data
 // from the server
-    function buildAndShowCategoriesHTML (categories) {
+    function buildAndShowCategoriesHTML(categories) {
         // Load title snippet of categories page
         $ajaxUtils.sendGetRequest(
             categoriesTitleHtml,
@@ -220,10 +219,9 @@ $(function () { // Same as document.addEventListener("DOMContentLoaded"...
     }
 
 
-
 // Builds HTML for the single category page based on the data
 // from the server
-    function buildAndShowMenuItemsHTML (categoryMenuItems) {
+    function buildAndShowMenuItemsHTML(categoryMenuItems) {
         // Load title snippet of menu items page
         $ajaxUtils.sendGetRequest(
             menuItemsTitleHtml,
